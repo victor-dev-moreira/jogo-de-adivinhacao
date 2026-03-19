@@ -18,18 +18,38 @@ O sistema informará o usuário se o mesmo acertou ou não, podendo incluir dica
 
 */
 
+// Numero Aleatorio de 1 até 20
+int numeroAleatorio = RandomNumberGenerator.GetInt32(1, 21);
+int tentivas = 1;
+
 Console.WriteLine("-------------------");
-Console.WriteLine("Jogo De Adivinhacão");
+Console.WriteLine("Jogo De Adivinhacão Contra Eu, Robo!");
 Console.WriteLine("-------------------");
 
 Console.WriteLine();
 Console.Write("Comece Digitando um numero: ");
-string strNumeroDigitado = Console.ReadLine();
+int numeroDigitado = int.Parse(Console.ReadLine());
 
 
-// Numero Aleatorio de 1 até 20
-int numeroAleatorio = RandomNumberGenerator.GetInt32(1, 21);
+
 
 Console.WriteLine("O Número digitado foi: " + numeroAleatorio);
+
+if (numeroDigitado == numeroAleatorio)
+{
+    Console.WriteLine("Você Acertou!!!");
+    Console.WriteLine("O Numero era " + numeroAleatorio);
+
+}
+
+else if (numeroDigitado > numeroAleatorio)
+{
+    Console.WriteLine("O numero digitado foi maior que o meu número!");
+}
+
+else
+{
+    Console.WriteLine("O numero digitado foi menor que o meu numero!");
+}
 
 Console.ReadKey();
