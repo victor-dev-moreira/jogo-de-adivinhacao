@@ -1,4 +1,7 @@
-﻿/* 
+﻿using System.Security.Cryptography;
+
+
+/* 
 
 v1
 
@@ -20,9 +23,13 @@ Console.WriteLine("Jogo De Adivinhacão");
 Console.WriteLine("-------------------");
 
 Console.WriteLine();
-Console.WriteLine("Comece Digitando um numero: ");
+Console.Write("Comece Digitando um numero: ");
 string strNumeroDigitado = Console.ReadLine();
 
-Console.WriteLine("O Número digitado foi: " + strNumeroDigitado);
+
+// Numero Aleatorio de 1 até 20
+int numeroAleatorio = RandomNumberGenerator.GetInt32(1, 21);
+
+Console.WriteLine("O Número digitado foi: " + numeroAleatorio);
 
 Console.ReadKey();
