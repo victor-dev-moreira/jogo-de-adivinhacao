@@ -34,21 +34,21 @@ while (jogoContinua)
     Console.WriteLine("Jogo De Adivinhacão Contra Eu, Robo!");
     Console.WriteLine("-------------------");
 
-    Console.WriteLine("Digite 1 para Facil");
-    Console.WriteLine("Digite 2 para Medio");
-    Console.WriteLine("Digite 3 para Dificil");
+    Console.WriteLine("Digite 1 para Fraco");
+    Console.WriteLine("Digite 2 para Mediano");
+    Console.WriteLine("Digite 3 para Impossivel");
     Console.WriteLine("-------------------");
 
     Console.Write("Qual dificuldade você deseja? ");
     int dificuldade = int.Parse(Console.ReadLine());
-    Console.WriteLine($"DEBUG: dificuldade = {dificuldade}");
 
     #region Dificuldade Facil
 
     if (dificuldade == 1)
     {
-        for (int i = 1; i <= 20; i++)
+        for (int i = 1; i <= 10; i++)
         {
+            Console.WriteLine("Serio que escolheu essa dificuldade? Você é fraco, humano!");
             Console.WriteLine("Tentativa numero " + i);
             Console.Write("Digite um numero: ");
             int numeroDigitado = int.Parse(Console.ReadLine());
@@ -56,9 +56,9 @@ while (jogoContinua)
 
             if (numeroDigitado == numeroAleatorio)
             {
-                Console.WriteLine("Você Acertou!!!");
+                Console.WriteLine("Você Acertou mas não se orgulhe, humano!");
                 Console.WriteLine("O Numero era " + numeroAleatorio);
-                i = 20;
+                i = 10;
 
             }
 
@@ -71,6 +71,12 @@ while (jogoContinua)
             {
                 Console.WriteLine("O numero digitado foi menor que o meu numero!");
             }
+
+            if (i == 20)
+            {
+                Console.WriteLine("-------------------");
+                Console.WriteLine("Você conseguiu perder na dificuldade facil, repense sua vida, humano!");
+            }
         }
 
     }
@@ -81,7 +87,7 @@ while (jogoContinua)
         numeroAleatorio = RandomNumberGenerator.GetInt32(1, 51);
 
         Console.WriteLine("-------------------");
-        Console.WriteLine("Você Escolheu A Dificuldade Médio");
+        Console.WriteLine("Você escolheu a dificuldade mediano, já é algo, humano!");
         Console.WriteLine("-------------------");
 
         for (int i = 1; i <= 7; i++)
@@ -108,8 +114,58 @@ while (jogoContinua)
             {
                 Console.WriteLine("O numero digitado foi menor que o meu numero!");
             }
+
+            if (i == 7)
+            {
+                Console.WriteLine("-------------------");
+                Console.WriteLine("Nem mediano você, volte para dificuldade fraco, humano!");
+
+            }
         }
 
+    }
+
+
+    if (dificuldade == 3)
+    {
+        numeroAleatorio = RandomNumberGenerator.GetInt32(1, 101);
+
+        Console.WriteLine("-------------------");
+        Console.WriteLine("Você escolheu a dificuldade impossivel, você é corasojo, humano!");
+        Console.WriteLine("-------------------");
+
+        for (int i = 1; i <= 3; i++)
+        {
+            Console.WriteLine("Tentativa numero " + i);
+            Console.Write("Digite Seu Numero, Humano: ");
+            int numeroDigitado = int.Parse(Console.ReadLine());
+            Console.WriteLine("-------------------");
+
+            if (numeroDigitado == numeroAleatorio)
+            {
+                Console.WriteLine("Você me venceu na dificuldade mais dificil, tem meu respeito, humano!");
+                Console.WriteLine("O Numero era " + numeroAleatorio);
+                i = 3;
+
+            }
+
+            else if (numeroDigitado > numeroAleatorio)
+            {
+                Console.WriteLine("O numero digitado foi maior que o meu número!");
+            }
+
+            else
+            {
+                Console.WriteLine("O numero digitado foi menor que o meu numero!");
+            }
+
+            if (i == 3)
+            {
+                Console.WriteLine("-------------------");
+                Console.WriteLine("Achou que poderia me vencer na dificuldade mais dificil, humano?");
+
+            }
+        }
     }
 
 
